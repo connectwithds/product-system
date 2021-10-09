@@ -51,14 +51,15 @@ const ProducstList = () => {
   const handlePromo = (e) => {
     console.log(promo);
     var total = products.reduce((total, thing) => total + thing.TOTAL, 0);
+    let amt = 0;
     if (promo === "PLSD123") {
-      total = total - (total * 10) / 100;
+      amt = total - (total * 10) / 100;
     } else if (promo === "PLSD456") {
-      total = total - (total * 15) / 100;
+      amt = total - (total * 15) / 100;
     } else {
-      total = total;
+      amt = total;
     }
-    setFinalAmount(total);
+    setFinalAmount(amt);
   };
 
   return (
